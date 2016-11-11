@@ -1,0 +1,950 @@
+2016-11-11 11:01:02,046 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.run.RunTask at 0x106879390>, dry=False, models=None, profile='lacolombe', target=None, threads=None, which='run')
+2016-11-11 11:01:02,680 - dbt.schema - DEBUG - MainThread - SQL: 
+            select tablename as name, 'table' as type from pg_tables where schemaname = 'dbt_arecalde'
+                union all
+            select viewname as name, 'view' as type from pg_views where schemaname = 'dbt_arecalde' 
+2016-11-11 11:01:02,721 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.04 seconds
+2016-11-11 11:01:02,722 - dbt.schema - DEBUG - MainThread - SQL response: []
+2016-11-11 11:01:02,734 - dbt.schema - DEBUG - MainThread - SQL: select nspname from pg_catalog.pg_namespace
+2016-11-11 11:01:02,753 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.02 seconds
+2016-11-11 11:01:02,754 - dbt.schema - DEBUG - MainThread - SQL response: [('pg_toast',), ('pg_internal',), ('square',), ('pg_temp_1',), ('pg_catalog',), ('public',), ('pg_temp_5',), ('information_schema',), ('pg_temp_6',), ('pg_temp_4',), ('shopify',), ('pg_temp_7',), ('pg_temp_8',), ('pg_temp_9',), ('googleadwords',), ('googleecommerce',)]
+2016-11-11 11:01:02,763 - dbt.schema - DEBUG - MainThread - SQL: create schema if not exists "dbt_arecalde"
+2016-11-11 11:01:02,807 - dbt.schema - DEBUG - MainThread - SQL status: CREATE SCHEMA in 0.04 seconds
+2016-11-11 11:01:02,991 - dbt.schema - DEBUG - MainThread - SQL: 
+            select tablename as name, 'table' as type from pg_tables where schemaname = 'dbt_arecalde'
+                union all
+            select viewname as name, 'view' as type from pg_views where schemaname = 'dbt_arecalde' 
+2016-11-11 11:01:03,030 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.04 seconds
+2016-11-11 11:01:03,030 - dbt.schema - DEBUG - MainThread - SQL response: []
+2016-11-11 11:02:56,557 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.run.RunTask at 0x106849390>, dry=False, models=None, profile='lacolombe', target=None, threads=None, which='run')
+2016-11-11 11:02:58,379 - dbt.schema - DEBUG - MainThread - SQL: 
+            select tablename as name, 'table' as type from pg_tables where schemaname = 'dbt_arecalde'
+                union all
+            select viewname as name, 'view' as type from pg_views where schemaname = 'dbt_arecalde' 
+2016-11-11 11:02:58,417 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.04 seconds
+2016-11-11 11:02:58,418 - dbt.schema - DEBUG - MainThread - SQL response: []
+2016-11-11 11:02:58,431 - dbt.schema - DEBUG - MainThread - SQL: select nspname from pg_catalog.pg_namespace
+2016-11-11 11:02:58,450 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.02 seconds
+2016-11-11 11:02:58,450 - dbt.schema - DEBUG - MainThread - SQL response: [('pg_toast',), ('pg_internal',), ('square',), ('pg_temp_1',), ('pg_catalog',), ('public',), ('pg_temp_5',), ('information_schema',), ('pg_temp_6',), ('pg_temp_4',), ('shopify',), ('pg_temp_7',), ('pg_temp_8',), ('pg_temp_9',), ('googleadwords',), ('googleecommerce',), ('dbt_arecalde',)]
+2016-11-11 11:02:58,458 - dbt.schema - DEBUG - MainThread - SQL: 
+            select tablename as name, 'table' as type from pg_tables where schemaname = 'dbt_arecalde'
+                union all
+            select viewname as name, 'view' as type from pg_views where schemaname = 'dbt_arecalde' 
+2016-11-11 11:02:58,493 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.03 seconds
+2016-11-11 11:02:58,493 - dbt.schema - DEBUG - MainThread - SQL response: []
+2016-11-11 11:03:17,023 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.compile.CompileTask at 0x106876530>, dry=False, profile='lacolombe', target=None, which='compile')
+2016-11-11 11:04:23,065 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.deps.DepsTask at 0x1068798d8>, profile='lacolombe', target=None, which='deps')
+2016-11-11 11:05:08,896 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.deps.DepsTask at 0x1068798d8>, profile='lacolombe', target=None, which='deps')
+2016-11-11 11:05:56,817 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.deps.DepsTask at 0x1067418d8>, profile='lacolombe', target=None, which='deps')
+2016-11-11 11:48:39,416 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.deps.DepsTask at 0x1069798d8>, profile='lacolombe', target=None, which='deps')
+2016-11-11 11:50:05,978 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.deps.DepsTask at 0x1068798d8>, profile='lacolombe', target=None, which='deps')
+2016-11-11 11:51:02,445 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.deps.DepsTask at 0x1068798d8>, profile='lacolombe', target=None, which='deps')
+2016-11-11 11:52:58,729 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.run.RunTask at 0x106849390>, dry=False, models=None, profile='lacolombe', target=None, threads=None, which='run')
+2016-11-11 11:53:03,669 - dbt.schema - DEBUG - MainThread - SQL: 
+            select tablename as name, 'table' as type from pg_tables where schemaname = 'dbt_arecalde'
+                union all
+            select viewname as name, 'view' as type from pg_views where schemaname = 'dbt_arecalde' 
+2016-11-11 11:53:03,710 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.04 seconds
+2016-11-11 11:53:03,711 - dbt.schema - DEBUG - MainThread - SQL response: []
+2016-11-11 11:53:03,762 - dbt.schema - DEBUG - MainThread - SQL: select nspname from pg_catalog.pg_namespace
+2016-11-11 11:53:03,780 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.02 seconds
+2016-11-11 11:53:03,780 - dbt.schema - DEBUG - MainThread - SQL response: [('pg_toast',), ('pg_internal',), ('square',), ('pg_temp_1',), ('pg_catalog',), ('public',), ('pg_temp_5',), ('information_schema',), ('pg_temp_6',), ('pg_temp_4',), ('shopify',), ('pg_temp_7',), ('pg_temp_8',), ('pg_temp_9',), ('googleadwords',), ('googleecommerce',), ('dbt_arecalde',)]
+2016-11-11 11:53:03,788 - dbt.schema - DEBUG - MainThread - SQL: 
+            select tablename as name, 'table' as type from pg_tables where schemaname = 'dbt_arecalde'
+                union all
+            select viewname as name, 'view' as type from pg_views where schemaname = 'dbt_arecalde' 
+2016-11-11 11:53:03,825 - dbt.schema - DEBUG - MainThread - SQL status: SELECT in 0.04 seconds
+2016-11-11 11:53:03,825 - dbt.schema - DEBUG - MainThread - SQL response: []
+2016-11-11 11:53:03,840 - dbt.runner - INFO - Thread-1 - executing model <CompiledModel shopify.shopify_products: target/build/shopify/base/shopify_products.sql>
+2016-11-11 11:53:03,840 - dbt.runner - INFO - Thread-2 - executing model <CompiledModel shopify.shopify_customers: target/build/shopify/base/shopify_customers.sql>
+2016-11-11 11:53:03,841 - dbt.schema - DEBUG - Thread-1 - SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_products__dbt_tmp"   as (
+    select
+
+  id,
+  title,
+  product_type,
+  vendor,
+  tags,
+  handle,
+  published_at,
+  created_at,
+  updated_at
+
+from
+  shopify.products
+);
+
+-- Post-model hooks
+
+2016-11-11 11:53:03,841 - dbt.runner - INFO - Thread-3 - executing model <CompiledModel shopify.shopify_orders: target/build/shopify/base/shopify_orders.sql>
+2016-11-11 11:53:03,841 - dbt.schema - DEBUG - Thread-2 - SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_customers__dbt_tmp"   as (
+    select
+  id,
+  first_name,
+  last_name,
+  email,
+  verified_email,
+  default_address__id as default_address_id,
+  note,
+  state,
+  tags,
+  tax_exempt,
+  created_at,
+  updated_at
+from
+  shopify.customers
+);
+
+-- Post-model hooks
+
+2016-11-11 11:53:03,841 - dbt.runner - INFO - Thread-4 - executing model <CompiledModel shopify.shopify_order_items: target/build/shopify/base/shopify_order_items.sql>
+2016-11-11 11:53:03,841 - dbt.schema - DEBUG - Thread-3 - SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_orders__dbt_tmp"   as (
+    -- see shopify docs here:
+-- https://help.shopify.com/api/reference/order
+
+select
+  -- ids
+  id,
+  customer__id as customer_id,
+  checkout_id,
+  cart_token,
+  checkout_token,
+  token,
+
+  -- logical ids reported in the application
+  "number",
+  order_number,
+
+  -- state
+  financial_status,
+  fulfillment_status,
+  confirmed,
+
+  -- cancellation information
+  cancel_reason,
+  cancelled_at,
+
+  -- etc
+  closed_at,
+  processed_at,
+  email,
+  contact_email,
+  name,
+  note,
+  tags,
+
+  -- attribution
+  browser_ip,
+  source_name,
+  landing_site,
+  landing_site_ref,
+  referring_site,
+
+  -- financial
+  currency,
+  processing_method,
+
+  -- numbers
+  subtotal_price,
+  taxes_included,
+  total_discounts,
+  total_line_items_price,
+  total_price,
+  total_price_usd,
+  total_tax,
+  total_weight,
+
+  -- point of sale info
+  user_id,
+  location_id,
+
+  -- address
+  shipping_address__address1,
+  shipping_address__address2,
+  shipping_address__city,
+  shipping_address__company,
+  shipping_address__country,
+  shipping_address__country_code,
+  shipping_address__first_name,
+  shipping_address__last_name,
+  shipping_address__latitude,
+  shipping_address__longitude,
+  shipping_address__name,
+  shipping_address__phone,
+  shipping_address__province,
+  shipping_address__province_code,
+  shipping_address__zip,
+  billing_address__address1,
+  billing_address__address2,
+  billing_address__city,
+  billing_address__company,
+  billing_address__country,
+  billing_address__country_code,
+  billing_address__first_name,
+  billing_address__last_name,
+  billing_address__latitude,
+  billing_address__longitude,
+  billing_address__name,
+  billing_address__phone,
+  billing_address__province,
+  billing_address__province_code,
+  billing_address__zip,
+
+  -- audit
+  created_at,
+  updated_at
+
+from
+  shopify.orders
+
+where
+  -- filter test transactions
+  test = false
+);
+
+-- Post-model hooks
+
+2016-11-11 11:53:03,842 - dbt.runner - INFO - Thread-5 - executing model <CompiledModel shopify.shopify_checkouts: target/build/shopify/base/shopify_checkouts.sql>
+2016-11-11 11:53:03,842 - dbt.runner - INFO - Thread-6 - executing model <CompiledModel shopify.shopify_refunds: target/build/shopify/base/shopify_refunds.sql>
+2016-11-11 11:53:03,842 - dbt.runner - INFO - Thread-7 - executing model <CompiledModel shopify.shopify_transactions: target/build/shopify/base/shopify_transactions.sql>
+2016-11-11 11:53:03,842 - dbt.schema - DEBUG - Thread-4 - SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_order_items__dbt_tmp"   as (
+    select
+
+  id,
+  product_id,
+  sku,
+  name,
+  title,
+  vendor,
+  quantity,
+  pre_tax_price,
+  price,
+  taxable,
+  gift_card,
+  total_discount,
+  grams
+
+from
+  shopify.orders__line_items
+);
+
+-- Post-model hooks
+
+2016-11-11 11:53:03,842 - dbt.runner - INFO - Thread-8 - executing model <CompiledModel shopify.shopify_discount_codes: target/build/shopify/base/shopify_discount_codes.sql>
+2016-11-11 11:53:03,842 - dbt.schema - DEBUG - Thread-5 - SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_checkouts__dbt_tmp"   as (
+    select
+  id,
+  customer__id as customer_id,
+  email,
+  cart_token,
+  token,
+  abandoned_checkout_url,
+  name,
+  completed_at,
+  currency,
+  gateway,
+  landing_site,
+  note,
+  source_name,
+  referring_site,
+  subtotal_price,
+  taxes_included,
+  total_discounts,
+  total_line_items_price,
+  total_price,
+  total_tax,
+  total_weight,
+  billing_address__address1,
+  billing_address__address2,
+  billing_address__city,
+  billing_address__company,
+  billing_address__country,
+  billing_address__country_code,
+  billing_address__first_name,
+  billing_address__last_name,
+  billing_address__latitude,
+  billing_address__longitude,
+  billing_address__name,
+  billing_address__phone,
+  billing_address__province,
+  billing_address__province_code,
+  billing_address__zip,
+  shipping_address__address1,
+  shipping_address__address2,
+  shipping_address__city,
+  shipping_address__company,
+  shipping_address__country,
+  shipping_address__country_code,
+  shipping_address__first_name,
+  shipping_address__last_name,
+  shipping_address__latitude,
+  shipping_address__longitude,
+  shipping_address__name,
+  shipping_address__phone,
+  shipping_address__province,
+  shipping_address__province_code,
+  shipping_address__zip,
+  updated_at,
+  created_at
+from
+  shopify.checkouts
+);
+
+-- Post-model hooks
+
+2016-11-11 11:53:03,842 - dbt.schema - DEBUG - Thread-6 - SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_refunds__dbt_tmp"   as (
+    select
+
+  id,
+  order_id,
+  user_id,
+  restock,
+  note,
+  created_at
+
+from
+  shopify.order_refunds
+);
+
+-- Post-model hooks
+
+2016-11-11 11:53:03,842 - dbt.schema - DEBUG - Thread-7 - SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_transactions__dbt_tmp"   as (
+    select
+
+  id,
+  parent_id,
+  order_id,
+
+  status,
+  error_code,
+  message,
+
+  kind,
+  amount,
+  "authorization",
+  currency,
+  gateway,
+
+  source_name,
+
+  created_at
+
+from
+  shopify.transactions
+
+where
+  -- filter test transactions
+  test = false
+);
+
+-- Post-model hooks
+
+2016-11-11 11:53:03,843 - dbt.schema - DEBUG - Thread-8 - SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_discount_codes__dbt_tmp"   as (
+    select
+
+  _sdc_source_key_id as order_id,
+  code,
+  amount,
+  type
+
+from
+  shopify.orders__discount_codes
+);
+
+-- Post-model hooks
+
+2016-11-11 11:53:03,926 - dbt.schema - ERROR - Thread-1 - Error running SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_products__dbt_tmp"   as (
+    select
+
+  id,
+  title,
+  product_type,
+  vendor,
+  tags,
+  handle,
+  published_at,
+  created_at,
+  updated_at
+
+from
+  shopify.products
+);
+
+-- Post-model hooks
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 174, in execute_without_auto_commit
+    cursor.execute(sql)
+ProgrammingError: relation "shopify.products" does not exist
+
+2016-11-11 11:53:03,926 - dbt.schema - ERROR - Thread-2 - Error running SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_customers__dbt_tmp"   as (
+    select
+  id,
+  first_name,
+  last_name,
+  email,
+  verified_email,
+  default_address__id as default_address_id,
+  note,
+  state,
+  tags,
+  tax_exempt,
+  created_at,
+  updated_at
+from
+  shopify.customers
+);
+
+-- Post-model hooks
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 174, in execute_without_auto_commit
+    cursor.execute(sql)
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,927 - dbt.schema - ERROR - Thread-3 - Error running SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_orders__dbt_tmp"   as (
+    -- see shopify docs here:
+-- https://help.shopify.com/api/reference/order
+
+select
+  -- ids
+  id,
+  customer__id as customer_id,
+  checkout_id,
+  cart_token,
+  checkout_token,
+  token,
+
+  -- logical ids reported in the application
+  "number",
+  order_number,
+
+  -- state
+  financial_status,
+  fulfillment_status,
+  confirmed,
+
+  -- cancellation information
+  cancel_reason,
+  cancelled_at,
+
+  -- etc
+  closed_at,
+  processed_at,
+  email,
+  contact_email,
+  name,
+  note,
+  tags,
+
+  -- attribution
+  browser_ip,
+  source_name,
+  landing_site,
+  landing_site_ref,
+  referring_site,
+
+  -- financial
+  currency,
+  processing_method,
+
+  -- numbers
+  subtotal_price,
+  taxes_included,
+  total_discounts,
+  total_line_items_price,
+  total_price,
+  total_price_usd,
+  total_tax,
+  total_weight,
+
+  -- point of sale info
+  user_id,
+  location_id,
+
+  -- address
+  shipping_address__address1,
+  shipping_address__address2,
+  shipping_address__city,
+  shipping_address__company,
+  shipping_address__country,
+  shipping_address__country_code,
+  shipping_address__first_name,
+  shipping_address__last_name,
+  shipping_address__latitude,
+  shipping_address__longitude,
+  shipping_address__name,
+  shipping_address__phone,
+  shipping_address__province,
+  shipping_address__province_code,
+  shipping_address__zip,
+  billing_address__address1,
+  billing_address__address2,
+  billing_address__city,
+  billing_address__company,
+  billing_address__country,
+  billing_address__country_code,
+  billing_address__first_name,
+  billing_address__last_name,
+  billing_address__latitude,
+  billing_address__longitude,
+  billing_address__name,
+  billing_address__phone,
+  billing_address__province,
+  billing_address__province_code,
+  billing_address__zip,
+
+  -- audit
+  created_at,
+  updated_at
+
+from
+  shopify.orders
+
+where
+  -- filter test transactions
+  test = false
+);
+
+-- Post-model hooks
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 174, in execute_without_auto_commit
+    cursor.execute(sql)
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,927 - dbt.schema - ERROR - Thread-5 - Error running SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_checkouts__dbt_tmp"   as (
+    select
+  id,
+  customer__id as customer_id,
+  email,
+  cart_token,
+  token,
+  abandoned_checkout_url,
+  name,
+  completed_at,
+  currency,
+  gateway,
+  landing_site,
+  note,
+  source_name,
+  referring_site,
+  subtotal_price,
+  taxes_included,
+  total_discounts,
+  total_line_items_price,
+  total_price,
+  total_tax,
+  total_weight,
+  billing_address__address1,
+  billing_address__address2,
+  billing_address__city,
+  billing_address__company,
+  billing_address__country,
+  billing_address__country_code,
+  billing_address__first_name,
+  billing_address__last_name,
+  billing_address__latitude,
+  billing_address__longitude,
+  billing_address__name,
+  billing_address__phone,
+  billing_address__province,
+  billing_address__province_code,
+  billing_address__zip,
+  shipping_address__address1,
+  shipping_address__address2,
+  shipping_address__city,
+  shipping_address__company,
+  shipping_address__country,
+  shipping_address__country_code,
+  shipping_address__first_name,
+  shipping_address__last_name,
+  shipping_address__latitude,
+  shipping_address__longitude,
+  shipping_address__name,
+  shipping_address__phone,
+  shipping_address__province,
+  shipping_address__province_code,
+  shipping_address__zip,
+  updated_at,
+  created_at
+from
+  shopify.checkouts
+);
+
+-- Post-model hooks
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 174, in execute_without_auto_commit
+    cursor.execute(sql)
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,927 - dbt.schema - ERROR - Thread-4 - Error running SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_order_items__dbt_tmp"   as (
+    select
+
+  id,
+  product_id,
+  sku,
+  name,
+  title,
+  vendor,
+  quantity,
+  pre_tax_price,
+  price,
+  taxable,
+  gift_card,
+  total_discount,
+  grams
+
+from
+  shopify.orders__line_items
+);
+
+-- Post-model hooks
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 174, in execute_without_auto_commit
+    cursor.execute(sql)
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,927 - dbt.schema - ERROR - Thread-6 - Error running SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_refunds__dbt_tmp"   as (
+    select
+
+  id,
+  order_id,
+  user_id,
+  restock,
+  note,
+  created_at
+
+from
+  shopify.order_refunds
+);
+
+-- Post-model hooks
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 174, in execute_without_auto_commit
+    cursor.execute(sql)
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,927 - dbt.schema - ERROR - Thread-7 - Error running SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_transactions__dbt_tmp"   as (
+    select
+
+  id,
+  parent_id,
+  order_id,
+
+  status,
+  error_code,
+  message,
+
+  kind,
+  amount,
+  "authorization",
+  currency,
+  gateway,
+
+  source_name,
+
+  created_at
+
+from
+  shopify.transactions
+
+where
+  -- filter test transactions
+  test = false
+);
+
+-- Post-model hooks
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 174, in execute_without_auto_commit
+    cursor.execute(sql)
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,927 - dbt.schema - ERROR - Thread-8 - Error running SQL: 
+-- Compiled by DBT
+
+
+-- Pre-model hooks
+
+
+-- Model SQL
+
+create view "dbt_arecalde"."shopify_discount_codes__dbt_tmp"   as (
+    select
+
+  _sdc_source_key_id as order_id,
+  code,
+  amount,
+  type
+
+from
+  shopify.orders__discount_codes
+);
+
+-- Post-model hooks
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 174, in execute_without_auto_commit
+    cursor.execute(sql)
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,928 - dbt.schema - DEBUG - Thread-1 - rolling back connection
+2016-11-11 11:53:03,928 - dbt.schema - DEBUG - Thread-2 - rolling back connection
+2016-11-11 11:53:03,929 - dbt.schema - DEBUG - Thread-3 - rolling back connection
+2016-11-11 11:53:03,929 - dbt.schema - DEBUG - Thread-5 - rolling back connection
+2016-11-11 11:53:03,929 - dbt.schema - DEBUG - Thread-4 - rolling back connection
+2016-11-11 11:53:03,929 - dbt.schema - DEBUG - Thread-6 - rolling back connection
+2016-11-11 11:53:03,930 - dbt.schema - DEBUG - Thread-7 - rolling back connection
+2016-11-11 11:53:03,930 - dbt.schema - DEBUG - Thread-8 - rolling back connection
+2016-11-11 11:53:03,930 - dbt.runner - ERROR - Thread-1 - Error executing target/build/shopify/base/shopify_products.sql
+relation "shopify.products" does not exist
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 312, in safe_execute_model
+    status = self.execute_model(runner, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 302, in execute_model
+    result = runner.execute(self.schema, self.target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 130, in execute
+    status = self.execute_contents(schema, target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 87, in execute_contents
+    handle, status = schema.execute_without_auto_commit(part, handle)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 182, in execute_without_auto_commit
+    raise e
+ProgrammingError: relation "shopify.products" does not exist
+
+2016-11-11 11:53:03,930 - dbt.runner - ERROR - Thread-2 - Error executing target/build/shopify/base/shopify_customers.sql
+current transaction is aborted, commands ignored until end of transaction block
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 312, in safe_execute_model
+    status = self.execute_model(runner, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 302, in execute_model
+    result = runner.execute(self.schema, self.target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 130, in execute
+    status = self.execute_contents(schema, target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 87, in execute_contents
+    handle, status = schema.execute_without_auto_commit(part, handle)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 182, in execute_without_auto_commit
+    raise e
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,930 - dbt.runner - ERROR - Thread-3 - Error executing target/build/shopify/base/shopify_orders.sql
+current transaction is aborted, commands ignored until end of transaction block
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 312, in safe_execute_model
+    status = self.execute_model(runner, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 302, in execute_model
+    result = runner.execute(self.schema, self.target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 130, in execute
+    status = self.execute_contents(schema, target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 87, in execute_contents
+    handle, status = schema.execute_without_auto_commit(part, handle)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 182, in execute_without_auto_commit
+    raise e
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,930 - dbt.runner - ERROR - Thread-5 - Error executing target/build/shopify/base/shopify_checkouts.sql
+current transaction is aborted, commands ignored until end of transaction block
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 312, in safe_execute_model
+    status = self.execute_model(runner, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 302, in execute_model
+    result = runner.execute(self.schema, self.target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 130, in execute
+    status = self.execute_contents(schema, target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 87, in execute_contents
+    handle, status = schema.execute_without_auto_commit(part, handle)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 182, in execute_without_auto_commit
+    raise e
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,931 - dbt.runner - ERROR - Thread-4 - Error executing target/build/shopify/base/shopify_order_items.sql
+current transaction is aborted, commands ignored until end of transaction block
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 312, in safe_execute_model
+    status = self.execute_model(runner, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 302, in execute_model
+    result = runner.execute(self.schema, self.target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 130, in execute
+    status = self.execute_contents(schema, target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 87, in execute_contents
+    handle, status = schema.execute_without_auto_commit(part, handle)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 182, in execute_without_auto_commit
+    raise e
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,931 - dbt.runner - ERROR - Thread-6 - Error executing target/build/shopify/base/shopify_refunds.sql
+current transaction is aborted, commands ignored until end of transaction block
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 312, in safe_execute_model
+    status = self.execute_model(runner, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 302, in execute_model
+    result = runner.execute(self.schema, self.target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 130, in execute
+    status = self.execute_contents(schema, target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 87, in execute_contents
+    handle, status = schema.execute_without_auto_commit(part, handle)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 182, in execute_without_auto_commit
+    raise e
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,931 - dbt.runner - ERROR - Thread-7 - Error executing target/build/shopify/base/shopify_transactions.sql
+current transaction is aborted, commands ignored until end of transaction block
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 312, in safe_execute_model
+    status = self.execute_model(runner, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 302, in execute_model
+    result = runner.execute(self.schema, self.target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 130, in execute
+    status = self.execute_contents(schema, target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 87, in execute_contents
+    handle, status = schema.execute_without_auto_commit(part, handle)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 182, in execute_without_auto_commit
+    raise e
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 11:53:03,931 - dbt.runner - ERROR - Thread-8 - Error executing target/build/shopify/base/shopify_discount_codes.sql
+current transaction is aborted, commands ignored until end of transaction block
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 312, in safe_execute_model
+    status = self.execute_model(runner, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 302, in execute_model
+    result = runner.execute(self.schema, self.target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 130, in execute
+    status = self.execute_contents(schema, target, model)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/runner.py", line 87, in execute_contents
+    handle, status = schema.execute_without_auto_commit(part, handle)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dbt/schema.py", line 182, in execute_without_auto_commit
+    raise e
+InternalError: current transaction is aborted, commands ignored until end of transaction block
+
+2016-11-11 12:11:48,178 - dbt.main - INFO - MainThread - running dbt with arguments Namespace(cls=<class dbt.task.deps.DepsTask at 0x1069798d8>, profile='lacolombe', target=None, which='deps')
