@@ -60,6 +60,7 @@ SELECT
 
   a.region,
   a.customer_type,
+  a.business_type,
 
   fday as transaction_date_fday,
   fweek as transaction_date_fweek,

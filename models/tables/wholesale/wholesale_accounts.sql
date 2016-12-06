@@ -67,6 +67,18 @@ case
   else 'Hospitality'
 end as customer_type,
 
+case 
+  when substring(a.customer_code, 5, 1) = 'C' then 'Cafe'
+  when substring(a.customer_code, 5, 1) = 'D' then 'Distributor'
+  when substring(a.customer_code, 5, 1) = 'S' then 'Small Market/Retail'
+  when substring(a.customer_code, 5, 1) = 'R' then 'Restaurant'
+  when substring(a.customer_code, 5, 1) = 'P' then 'People'
+  when substring(a.customer_code, 5, 1) = 'O' then 'Office'
+  when substring(a.customer_code, 5, 1) = 'H' then 'Hotels'
+  when substring(a.customer_code, 5, 1) = 'G' then 'Groups'
+  when substring(a.customer_code, 5, 1) = 'F' then 'Catering/Bakery'
+end as business_type,
+
 rc.fday as second_paid_coffee_invoice_date_fday,
 rc.fweek as second_paid_coffee_invoice_date_fweek,
 rc.fperiod as second_paid_coffee_invoice_date_fperiod,
