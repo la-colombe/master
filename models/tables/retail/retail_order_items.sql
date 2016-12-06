@@ -33,7 +33,7 @@ select
 	location_code,
 
 --Retail Calendar
-	to_char(convert_timezone(timezone, created_at), 'HH') as created_at_hour,
+	to_char(convert_timezone(timezone, created_at), 'HH24') as created_at_hour,
 	fday as created_at_fday,
 	fweek as created_at_fweek,
 	fperiod as created_at_fperiod,

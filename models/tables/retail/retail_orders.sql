@@ -34,6 +34,7 @@ select
 		else 'Comp'
 	end as comp,
 --Retail Calendar
+	to_char(convert_timezone(timezone, created_at), 'HH24') as created_at_hour,
 	fday as created_at_fday,
 	fweek as created_at_fweek,
 	fperiod as created_at_fperiod,
@@ -77,6 +78,7 @@ select
 	end as comp,
 
 --Retail Calendar
+	NULL as created_at_hour,
 	fday as created_at_fday,
 	fweek as created_at_fweek,
 	fperiod as created_at_fperiod,
