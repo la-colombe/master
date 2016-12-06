@@ -1,5 +1,6 @@
 select 
 
+pk,
 cafe,
 date,
 item_name,

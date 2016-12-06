@@ -11,29 +11,30 @@ data-paths: ["data"]       # load CSVs from this directory with `dbt seed`
 profile: lacolombe
 # specify per-model configs
 models:
+  master:
+    file_uploads:
+      micros_order_items:
+        materialized: ephemeral
   shopify:
-    source:
-      matertialized: ephemeral
-    filters:
-      matertialized: ephemeral
+    materialized: ephemeral
     all:
-      enabled: false
+      tables:
+        materialized: table
     subscription:
-      matertialized: ephemeral
       tables:
-        matertialized: view
+        materialized: table
     non_subscription:
-      matertialized: ephemeral
       tables:
-        matertialized: view
+        materialized: table
   square:
-    base:
-      matertialized: ephemeral
-    tables:
-      matertialized: view
+    materialized: ephemeral
+  warehouse:
+    materialized: ephemeral
 
 
 # uncomment below and add real repositories to add dependencies to this project
 repositories:
   - "https://github.com/la-colombe/shopify.git"
   - "https://github.com/la-colombe/square.git"
+  - "https://github.com/la-colombe/warehouse.git"
+

@@ -1,7 +1,6 @@
 {{
   config({
-    "materialized" : "incremental",
-    "sql_where" : "updated_at > (select max(updated_at) from {{this}})",
+    "materialized" : "table",
     "unique_key" : "id",
     "sort" : "created_at",
     })
@@ -27,13 +26,23 @@ select
 	items_per_order,
 
 	created_at,
-	fday as created_at_fday,
-	fweek as created_at_fweek,
-	fperiod as created_at_fperiod,
-	fyear as created_at_fyear,
-	fday_of_week as created_at_fday_of_week,
-	fday_of_period as created_at_fday_of_period
+	rc.fday as created_at_fday,
+	rc.fweek as created_at_fweek,
+	rc.fperiod as created_at_fperiod,
+	rc.fyear as created_at_fyear,
+	rc.fquarter as created_at_fquarter,
+	rc.fday_of_week as created_at_fday_of_week,
+	rc.fday_of_period as created_at_fday_of_period,
+
+	forc.fday as first_order_fday,
+	forc.fweek as first_order_fweek,
+	forc.fperiod as first_order_fperiod,
+	forc.fyear as first_order_fyear,
+	forc.fquarter as first_order_fquarter,
+	forc.fday_of_week as first_order_fday_of_week,
+	forc.fday_of_period as first_order_fday_of_period
 
 
  from {{ref('shopify_non_subscription_customers')}} c
  join {{ref('retail_calendar')}} rc on rc.date = date_trunc('day', c.created_at)
+join {{ref('retail_calendar')}} forc on forc.date = date_trunc('day', c.first_order_date)

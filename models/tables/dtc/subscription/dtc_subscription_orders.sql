@@ -1,7 +1,6 @@
 {{
   config({
-    "materialized" : "incremental",
-    "sql_where" : "updated_at > (select max(updated_at) from {{this}})",
+    "materialized" : "table",
     "unique_key" : "id",
     "sort" : "created_at",
     })
@@ -19,8 +18,9 @@ processing_method,
 gateway,
 previous_order_created_at,
 customer_created_at,
-subtotal_price,
-total_weight,
+net_sales,
+gross_sales,
+weight,
 time_since_customer_creation,
 time_since_first_order,
 time_since_previous_order,
@@ -30,6 +30,7 @@ fday as created_at_fday,
 fweek as created_at_fweek,
 fperiod as created_at_fperiod,
 fyear as created_at_fyear,
+fquarter as created_at_fquarter,
 fday_of_week as created_at_fday_of_week,
 fday_of_period as created_at_fday_of_period,
 updated_at

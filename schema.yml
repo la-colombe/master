@@ -1,0 +1,84 @@
+dtc_customers:
+  constraints:
+    not_null:
+      - id
+      - created_at
+      - updated_at
+    unique:
+      - id
+
+dtc_orders:
+  constraints:
+    not_null:
+      - id
+      - created_at
+      - updated_at
+    unique:
+      - id
+
+dtc_order_items:
+  constraints:
+    not_null:
+      - id
+      - order_id
+      - created_at
+      - updated_at
+    unique:
+      - id
+
+dtc_non_subscription_customers:
+  constraints:
+    not_null:
+      - id
+      - created_at
+      - updated_at
+    unique:
+      - id
+
+dtc_non_subscription_orders:
+  constraints:
+    not_null:
+      - id
+      - created_at
+      - updated_at
+    unique:
+      - id
+
+dtc_non_subscription_order_items:
+  constraints:
+    not_null:
+      - id
+      - order_id
+      - created_at
+      - updated_at
+    unique:
+      - id
+
+
+dtc_subscription_customers:
+  constraints:
+    not_null:
+      - id
+      - created_at
+      - updated_at
+    unique:
+      - id
+
+dtc_subscription_orders:
+  constraints:
+    not_null:
+      - id
+      - created_at
+      - updated_at
+    unique:
+      - id
+
+dtc_subscription_order_items:
+  constraints:
+    not_null:
+      - id
+      - order_id
+      - created_at
+      - updated_at
+    unique:
+      - id
