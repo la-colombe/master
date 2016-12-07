@@ -22,6 +22,10 @@ select
 	units,
 	updated_at,
 
+--Order Item Aggregates
+	employee_bag,
+	expired_bag,
+
 --Location
 	open_date,
 	comp_date,
@@ -64,6 +68,10 @@ select
 	null as fees,
 	count as units,
 	m.date as updated_at,
+
+	--Order Item Aggregates
+	NULL as employee_bag,
+	NULL as expired_bag,
 
 --Location
 	open_date,

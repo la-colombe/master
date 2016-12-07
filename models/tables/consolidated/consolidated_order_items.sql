@@ -114,7 +114,7 @@ SELECT
 	md5('Wholesale' || unique_invoice_item_id) as unique_id,
 	'Wholesale' as source,
 	unique_invoice_item_id as id,
-	invoice_unique_id as order_id,
+	unique_invoice_id as order_id,
 	customer_code as customer_id,
 
 --Item info
