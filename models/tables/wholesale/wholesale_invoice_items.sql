@@ -2,14 +2,14 @@
   config({
     "materialized" : "table",
     "sort" : "transaction_date",
-    "unique_key" : "unique_id"
+    "unique_key" : "unique_invoice_item_id"
     })
 }}
 
 
 SELECT 
-  unique_id,
-  ii.invoice_unique_id,
+  ii.unique_invoice_item_id,
+  ii.unique_invoice_id,
   ii.invoice_number,
   ii.sku,
   ii.item_name,

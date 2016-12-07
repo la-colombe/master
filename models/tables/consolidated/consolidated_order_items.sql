@@ -111,9 +111,9 @@ UNION
 
 SELECT 
 --IDs
-	md5('Wholesale' || unique_id) as unique_id,
+	md5('Wholesale' || unique_invoice_item_id) as unique_id,
 	'Wholesale' as source,
-	unique_id as id,
+	unique_invoice_item_id as id,
 	invoice_unique_id as order_id,
 	customer_code as customer_id,
 

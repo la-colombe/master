@@ -2,13 +2,13 @@
   config({
     "materialized" : "table",
     "sort" : "transaction_date",
-    "unique_key" : "unique_id"
+    "unique_key" : "unique_invoice_id"
     })
 }}
 
 
 SELECT 
-  unique_id,
+  i.unique_invoice_id,
   i.transaction_date, 
   i.customer_code,
   i.bill_to_name,
