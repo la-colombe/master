@@ -33,10 +33,7 @@ select
 	region,
 	store_type,
 	location_code,
-	case
-		when created_at < comp_date then 'Non-Comp'
-		else 'Comp'
-	end as comp,
+	is_comp,
 --Retail Calendar
 	to_char(convert_timezone(timezone, created_at), 'HH24') as created_at_hour,
 	fday as created_at_fday,
@@ -80,10 +77,7 @@ select
 	region,
 	store_type,
 	location_code,
-	case
-		when m.date < comp_date then 'Non-Comp'
-		else 'Comp'
-	end as comp,
+	is_comp,
 
 --Retail Calendar
 	NULL as created_at_hour,

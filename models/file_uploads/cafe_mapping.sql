@@ -20,6 +20,12 @@ cc,
 st,
 t,
 cust,
-loc
+loc,
+
+--Calculated Column
+case
+	when comp_date > current_date then 'Non Comp'
+	else 'Comp'
+end as is_comp
 
 from google_sheets.cafe_mapping
