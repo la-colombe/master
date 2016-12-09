@@ -16,11 +16,7 @@
     	]
     })
 }}
-select 
-	*,
-	case 
-		when created_at
-from (
+
 select
 
 --IDs
@@ -178,7 +174,5 @@ SELECT
 	is_ytd
 
 from {{ref('wholesale_invoice_items')}}
-
-)
 
 
