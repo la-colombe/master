@@ -16,7 +16,11 @@
     	]
     })
 }}
-
+select 
+	*,
+	case 
+		when created_at
+from (
 select
 
 --IDs
@@ -58,7 +62,15 @@ select
 	created_at_fyear,
 	created_at_fquarter,
 	created_at_fday_of_week,
-	created_at_fday_of_period
+	created_at_fday_of_period,
+	is_last_week,
+	is_last_month,
+	is_ty,
+	is_ly,
+	is_wtd,
+	is_mtd,
+	is_qtd,
+	is_ytd
 
 from {{ref('dtc_order_items')}}
 
@@ -103,7 +115,15 @@ select
 	created_at_fyear,
 	created_at_fquarter,
 	created_at_fday_of_week,
-	created_at_fday_of_period
+	created_at_fday_of_period,
+	is_last_week,
+	is_last_month,
+	is_ty,
+	is_ly,
+	is_wtd,
+	is_mtd,
+	is_qtd,
+	is_ytd
 
 from {{ref('retail_order_items')}}
 
@@ -147,8 +167,18 @@ SELECT
 	transaction_date_fyear,
 	transaction_date_fquarter,
 	transaction_date_fday_of_week,
-	transaction_date_fday_of_period
+	transaction_date_fday_of_period,
+	is_last_week,
+	is_last_month,
+	is_ty,
+	is_ly,
+	is_wtd,
+	is_mtd,
+	is_qtd,
+	is_ytd
 
 from {{ref('wholesale_invoice_items')}}
+
+)
 
 
