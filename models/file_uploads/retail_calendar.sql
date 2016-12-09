@@ -56,10 +56,10 @@ case
 	else false
 end as is_mtd,
 case
-	when fquarter = (select fquarter from today) 
+	when CEIL(fperiod::float / 3) = (select fquarter from today) 
 		and fperiod < (select fperiod from today)
 		then true
-	when fquarter = (select fquarter from today) 
+	when CEIL(fperiod::float / 3) = (select fquarter from today) 
 		and fperiod = (select fperiod from today) 
 		and fday_of_period < (select fday_of_period from today) then true
 	else false
