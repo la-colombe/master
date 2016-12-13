@@ -24,6 +24,7 @@ select
 	item_base_price,
 	employee_bag,
 	expired_bag,
+	notes,
 
 --Location
 	open_date,
@@ -76,6 +77,7 @@ select
 	NULL as item_base_price,
 	NULL as employee_bag,
 	NULL as expired_bag,
+	NULL as notes,
 --Location
 	open_date,
 	comp_date,

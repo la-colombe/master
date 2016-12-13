@@ -11,6 +11,7 @@ select
 a.name,
 a.second_paid_coffee_invoice_date,
 a.first_invoice_date,
+a.most_recent_invoice_date,
 a.division,
 a.sales_rep_id,
 a.regional_manager_id,
@@ -64,7 +65,8 @@ end as region,
 
 case
   when a.customer_code like '15%' then 'CPG'
-  when a.customer_code in (select warehouse from analytics.cafe_mapping) then 'Cafe'
+  when a.customer_code in (select warehouse from analytics.cafe_mapping) then 'Internal'
+  when a.customer_code like '%LCTX%' or a.customer_code like '%LACX%' then 'Internal'
   else 'Hospitality'
 end as customer_type,
 
