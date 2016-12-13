@@ -60,7 +60,15 @@ SELECT
   fyear as transaction_date_fyear,
   fquarter as transaction_date_fquarter,
   fday_of_week as transaction_date_fday_of_week,
-  fday_of_period as transaction_date_fday_of_period
+  fday_of_period as transaction_date_fday_of_period,
+  is_last_week,
+  is_last_month,
+  is_ty,
+  is_ly,
+  is_wtd,
+  is_mtd,
+  is_qtd,
+  is_ytd
 
 from {{ref('warehouse_invoices')}} i
 left join {{ref('wholesale_accounts')}} a on a.customer_code = i.customer_code

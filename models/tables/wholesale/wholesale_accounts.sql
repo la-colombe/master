@@ -10,6 +10,7 @@ select
 
 a.name,
 a.second_paid_coffee_invoice_date,
+a.first_invoice_date,
 a.division,
 a.sales_rep_id,
 a.regional_manager_id,

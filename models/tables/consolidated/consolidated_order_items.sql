@@ -12,7 +12,10 @@
     	"drop table if exists {{ref('shopify_subscription_orders')}} cascade",
     	"drop table if exists {{ref('shopify_order_items')}} cascade",
     	"drop table if exists {{ref('shopify_non_subscription_order_items')}} cascade",
-    	"drop table if exists {{ref('shopify_subscription_order_items')}} cascade"
+    	"drop table if exists {{ref('shopify_subscription_order_items')}} cascade",
+    	"drop table if exists {{ref('square_cafe_order_items')}} cascade",
+    	"drop table if exists {{ref('square_cafe_orders')}} cascade"
+
     	]
     })
 }}
@@ -43,11 +46,10 @@ select
 
 --Customer Info
 	NULL as customer_name,
-	subscription_type as customer_type,
+	subscription_type as unit_type,
 
 --Location
 	NULL as region,
-	NULL as location_code,
 
 --Calendar
 
@@ -96,12 +98,11 @@ select
 	NULL as financial_status,
 
 --Customer Info
-	NULL as customer_name,
-	NULL as customer_type,
+	location_code as customer_name,
+	location_code as unit_type,
 
 --Location
 	region,
-	location_code,
 
 --Calendar
 	created_at,
@@ -128,7 +129,7 @@ UNION
 SELECT 
 --IDs
 	md5('Wholesale' || unique_invoice_item_id) as unique_id,
-	customer_type as source,
+	'Wholesale' as source,
 	unique_invoice_item_id as id,
 	unique_invoice_id as order_id,
 	customer_code as customer_id,
@@ -150,11 +151,10 @@ SELECT
 --Customer Info
 
 	account_name as customer_name,
-	customer_type,
+	customer_type as unit_type,
 
 --Location
 	region,
-	NULL as location_code,
 --Calendar
 	transaction_date,
 	transaction_date_fday,

@@ -28,6 +28,8 @@ models:
         materialized: table
   square:
     materialized: ephemeral
+    tables:
+      materialized: table
   warehouse:
     materialized: ephemeral
 

@@ -112,9 +112,10 @@ join
     from {{ref('cafe_mapping')}} cm
     join
     (
-      select location_code, avg(taxes / nullif((gross_sales + inclusive_tax),0)) as rate
+      select location_code, avg(taxes / nullif((gross_sales + inclusive_tax),0)) as rate, min(date_trunc('day', created_at)) as square_start_date
       from {{ref('square_cafe_orders')}}
       group by 1
     ) tr on tr.location_code = cm.square
   ) cr on cr.micros = m.cafe
 join {{ref('retail_calendar')}} rc on rc.date = m.date
+where created_at < cr.square_start_date
