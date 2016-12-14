@@ -46,7 +46,11 @@ select
 
 --Customer Info
 	NULL as customer_name,
-	subscription_type as unit_type,
+	 case
+		when customer_order_number > 1 then 'Repeat'
+		else 'First'
+	end as unit_type,
+ 	subscription_type as unit_sub_type,
 
 --Location
 	NULL as region,
@@ -99,7 +103,8 @@ select
 
 --Customer Info
 	location_code as customer_name,
-	location_code as unit_type,
+	is_comp as unit_type,
+	location_code as unit_sub_type,
 
 --Location
 	region,
@@ -152,6 +157,11 @@ SELECT
 
 	account_name as customer_name,
 	customer_type as unit_type,
+	case 
+		when customer_type = 'Hospitality' then region
+		when customer_type = 'CPG' then account_name
+		else NULL
+	end as unit_sub_type,
 
 --Location
 	region,
