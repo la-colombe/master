@@ -50,9 +50,39 @@ SELECT
   i.total_weight,
   i.account_paid_coffee_invoice_number,
 
-  a.region,
-  a.customer_type,
-  a.business_type,
+  case
+    when i.customer_code in (select warehouse from analytics.cafe_mapping) then 'Cafe'
+    when left(i.customer_code,2)  = '01' then 'Philly'
+    when left(i.customer_code,2)  = '15' then 'CPG'
+    when left(i.customer_code,2)  = '20' or left(i.customer_code,2)  = '40' or left(i.customer_code,2)  = '55' then 'New York'
+    when left(i.customer_code,2)  = '30' then 'DC'
+    when left(i.customer_code,2)  = '50' then 'Chicago'
+    when left(i.customer_code,2)  = '60' or left(i.customer_code,2)  = '25' then 'West Coast'
+    when left(i.customer_code,2)  = '61' then 'California'
+    when left(i.customer_code,2)  = '64' then 'Florida'
+    when left(i.customer_code,2)  = '65' then 'Boston'
+    when left(i.customer_code,2)  = '70' then 'Nationals'
+    else 'Other'
+  end as region,
+
+  case
+    when i.customer_code like '15%' then 'CPG'
+    when i.customer_code in (select warehouse from analytics.cafe_mapping) then 'Internal'
+    when i.customer_code like '%LCTX%' or i.customer_code like '%LACX%' then 'Internal'
+    else 'Hospitality'
+  end as customer_type,
+
+  case 
+    when substring(i.customer_code, 5, 1) = 'C' then 'Cafe'
+    when substring(i.customer_code, 5, 1) = 'D' then 'Distributor'
+    when substring(i.customer_code, 5, 1) = 'S' then 'Small Market/Retail'
+    when substring(i.customer_code, 5, 1) = 'R' then 'Restaurant'
+    when substring(i.customer_code, 5, 1) = 'P' then 'People'
+    when substring(i.customer_code, 5, 1) = 'O' then 'Office'
+    when substring(i.customer_code, 5, 1) = 'H' then 'Hotels'
+    when substring(i.customer_code, 5, 1) = 'G' then 'Groups'
+    when substring(i.customer_code, 5, 1) = 'F' then 'Catering/Bakery'
+  end as business_type,
 
   fday as transaction_date_fday,
   fweek as transaction_date_fweek,
