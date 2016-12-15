@@ -67,6 +67,11 @@ end as is_qtd,
 case
 	when fday < (select fday from today) then true
 	else false
-end as is_ytd
+end as is_ytd,
+case
+	when fyear < (select fyear from today) - 1 then true
+	when fyear = (select fyear from today) - 1 and fday <= (select fday from today) then true
+	else false
+end as is_comp
 
 from public.retail_calendar

@@ -33,7 +33,7 @@ select
 	region,
 	store_type,
 	location_code,
-	is_comp,
+	cm.is_comp,
 
 --Retail Calendar
 	to_char(convert_timezone(timezone, created_at), 'HH24') as created_at_hour,
@@ -85,7 +85,7 @@ select
 	region,
 	store_type,
 	location_code,
-	is_comp,
+	cr.is_comp,
 --Retail Calendar
 	NULL as created_at_hour,
 	fday as created_at_fday,

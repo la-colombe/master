@@ -40,7 +40,7 @@ SELECT
   ii.comment,
   ii.account_paid_coffee_invoice_number,
   ii.total_weight,
-  --ii.account_name,
+  ii.account_name,
   --ii.account_division,
   --ii.company_code,
   --ii.account_min_vol,

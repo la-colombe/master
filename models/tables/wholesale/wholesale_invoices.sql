@@ -28,7 +28,7 @@ SELECT
   i.invoice_freight,
   i.comment,
   
-  --i.account_name,
+  i.account_name,
   --i.account_division,
   --i.company_code,
   --i.account_min_vol,

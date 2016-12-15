@@ -13,6 +13,19 @@ profile: lacolombe
 models:
   master:
     materialized: ephemeral
+    file_uploads:
+      retail_calendar:
+        materialized: table
+    tables:
+      consolidated:
+        materialized: table
+      dtc:
+        consolidated:
+          materialized: table
+      retail:
+        materialized: table
+      wholesale:
+        materialized: table
   shopify:
     materialized: ephemeral
     all:
