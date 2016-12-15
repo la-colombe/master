@@ -1,11 +1,3 @@
-{{
-  config({
-    "materialized" : "table",
-    "unique_key" : "id",
-    "sort" : "created_at",
-    })
-}}
-
 select
 	id,
 	first_name,

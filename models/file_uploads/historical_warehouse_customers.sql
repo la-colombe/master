@@ -1,2 +1,0 @@
-select customer_code, date_trunc('day',second_coffee_order_date) as second_coffee_order_date
-from google_sheets.historical_warehouse_customers

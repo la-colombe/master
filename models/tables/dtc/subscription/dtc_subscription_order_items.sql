@@ -1,11 +1,3 @@
-{{
-  config({
-    "materialized" : "table",
-    "unique_key" : "oi.id",
-    "sort" : "created_at",
-    })
-}}
-
 select 
 
 oi.id,

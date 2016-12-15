@@ -12,9 +12,7 @@ profile: lacolombe
 # specify per-model configs
 models:
   master:
-    file_uploads:
-      micros_order_items:
-        materialized: ephemeral
+    materialized: ephemeral
   shopify:
     materialized: ephemeral
     all:
