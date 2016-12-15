@@ -16,8 +16,9 @@ select
 	fday,
 	fday_of_week,
 	fday_of_period,
-	CEIL(fperiod::float / 3) as fquarter
-from public.retail_calendar
+	fquarter,
+	fday_of_quarter
+from google_sheets.retail_calendar
 where date = current_date
 )
 
@@ -30,7 +31,8 @@ fweek,
 fday,
 fday_of_week,
 fday_of_period,
-CEIL(fperiod::float / 3) as fquarter,
+fquarter,
+fday_of_quarter,
 case
 	when fweek = (select fweek from today) - 1 then true
 	else false
@@ -39,6 +41,22 @@ case
 	when fperiod = (select fperiod from today) - 1 then true
 	else false
 end as is_last_month,
+case
+	when fquarter = (select fquarter from today) - 1 then true
+	else false
+end as is_last_quarter,
+case
+	when fweek = (select fweek from today) then true
+	else false
+end as is_this_week,
+case
+	when fperiod = (select fperiod from today) then true
+	else false
+end as is_this_month,
+case
+	when fquarter = (select fquarter from today) then true
+	else false
+end as is_this_quarter,
 case
 	when fyear = (select fyear from today) then true
 	else false
@@ -56,12 +74,7 @@ case
 	else false
 end as is_mtd,
 case
-	when CEIL(fperiod::float / 3) = (select fquarter from today) 
-		and fperiod < (select fperiod from today)
-		then true
-	when CEIL(fperiod::float / 3) = (select fquarter from today) 
-		and fperiod = (select fperiod from today) 
-		and fday_of_period < (select fday_of_period from today) then true
+	when fday_of_quarter < (select fday_of_quarter from today) then true
 	else false
 end as is_qtd,
 case
@@ -69,9 +82,9 @@ case
 	else false
 end as is_ytd,
 case
-	when fyear < (select fyear from today) - 1 then true
-	when fyear = (select fyear from today) - 1 and fday <= (select fday from today) then true
+	when fyear = (select fyear from today) then true
+	when fyear = (select fyear from today) - 1 and fday >= (select fday from today) then true
 	else false
-end as is_comp
+end as is_within_last_12_months
 
-from public.retail_calendar
+from google_sheets.retail_calendar

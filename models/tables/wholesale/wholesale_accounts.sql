@@ -88,8 +88,7 @@ rc.fperiod as second_paid_coffee_invoice_date_fperiod,
 rc.fyear as second_paid_coffee_invoice_date_fyear,
 rc.fquarter as second_paid_coffee_invoice_date_fquarter,
 rc.fday_of_week second_paid_coffee_invoice_date_fday_of_week,
-rc.fday_of_period second_paid_coffee_invoice_date_fday_of_period,
-rc.is_comp as is_comp
+rc.fday_of_period second_paid_coffee_invoice_date_fday_of_period
 
 
 from {{ref('warehouse_accounts')}} a
