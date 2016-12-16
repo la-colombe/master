@@ -9,7 +9,7 @@
 
 with today as(
 select
-	date,
+	date_trunc('day', date) as date,
 	fyear,
 	fperiod,
 	fweek,
@@ -19,12 +19,12 @@ select
 	fquarter,
 	fday_of_quarter
 from google_sheets.retail_calendar
-where date = current_date
+where date_trunc('day', date) = current_date
 )
 
 select 
 
-date,
+date_trunc('day', date) as date,
 fyear,
 fperiod,
 fweek,

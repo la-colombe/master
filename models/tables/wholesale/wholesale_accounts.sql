@@ -10,6 +10,7 @@ select
 
 a.name,
 a.second_paid_coffee_invoice_date,
+dateadd(day, 365, a.second_paid_coffee_invoice_date) as comp_date,
 a.first_invoice_date,
 a.most_recent_invoice_date,
 a.division,

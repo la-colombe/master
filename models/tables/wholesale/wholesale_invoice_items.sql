@@ -61,6 +61,10 @@ SELECT
   a.region,
   a.customer_type,
   a.business_type,
+  case
+    when ii.transaction_date >= a.comp_date then true
+    else false
+  end as is_comp,
 
   fday as transaction_date_fday,
   fweek as transaction_date_fweek,
