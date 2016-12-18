@@ -36,6 +36,7 @@ select
 	cm.is_comp,
 
 --Retail Calendar
+	date_trunc('day', convert_timezone(timezone, created_at)) as created_at_date,
 	to_char(convert_timezone(timezone, created_at), 'HH24') as created_at_hour,
 	fday as created_at_fday,
 	fweek as created_at_fweek,
@@ -87,6 +88,7 @@ select
 	location_code,
 	cr.is_comp,
 --Retail Calendar
+	m.date as created_at_date,
 	NULL as created_at_hour,
 	fday as created_at_fday,
 	fweek as created_at_fweek,

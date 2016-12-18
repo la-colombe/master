@@ -56,8 +56,8 @@ select
 	NULL as region,
 
 --Calendar
-
 	created_at,
+	created_at_date,
 	created_at_fday,
 	created_at_fweek,
 	created_at_fperiod,
@@ -111,6 +111,7 @@ select
 
 --Calendar
 	created_at,
+	created_at_date,
 	created_at_fday,
 	created_at_fweek,
 	created_at_fperiod,
@@ -166,6 +167,7 @@ SELECT
 --Location
 	region,
 --Calendar
+	transaction_date,
 	transaction_date,
 	transaction_date_fday,
 	transaction_date_fweek,

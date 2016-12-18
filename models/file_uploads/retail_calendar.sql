@@ -34,6 +34,10 @@ fday_of_period,
 fquarter,
 fday_of_quarter,
 case
+	when fday = (select fday from today) - 1 then true
+	else false
+end as is_yesterday,
+case
 	when fweek = (select fweek from today) - 1 then true
 	else false
 end as is_last_week,
