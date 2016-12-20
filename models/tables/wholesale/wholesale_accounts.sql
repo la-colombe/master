@@ -65,7 +65,7 @@ case
 end as region,
 
 case
-  when a.customer_code like '15%' then 'CPG'
+  when a.customer_code like '15%' or a.customer_code like '70%' then 'CPG'
   when a.customer_code in (select warehouse from analytics.cafe_mapping) then 'Internal'
   when a.customer_code like '%LCTX%' or a.customer_code like '%LACX%' then 'Internal'
   else 'Hospitality'
