@@ -109,7 +109,7 @@ SELECT
   	NULL as is_comp,
  	customer_type as unit_type,
  
-	transaction_date,
+	ship_date,
 	NULL,
 	transaction_date_fday,
 	transaction_date_fweek,

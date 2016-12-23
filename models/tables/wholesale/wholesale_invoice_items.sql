@@ -27,6 +27,7 @@ SELECT
   ii.bill_to_name,
   ii.invoice_type,
   ii.invoice,
+  ii.ship_date,
   ii.ship_to_name,
   ii.ship_to_address1,
   ii.ship_to_address2,

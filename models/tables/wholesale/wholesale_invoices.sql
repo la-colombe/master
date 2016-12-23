@@ -17,6 +17,7 @@ SELECT
   --i.invoice_type,
   i.time_since_previous_paid_coffee_invoice,
   i.invoice,
+  i.ship_date,
   i.ship_to_name,
   i.ship_to_address1,
   i.ship_to_address2,
