@@ -51,6 +51,15 @@ a.current_balance,
 a.churn_date,
 a.churn_status,
 
+a.address_line_1,
+a.address_line_2,
+a.city,
+a.state,
+a.country,
+a.zip,
+a.email,
+a.phone,
+a.tax,
 
 case
     when a.customer_code in (select warehouse from analytics.cafe_mapping) then 'Cafe'
