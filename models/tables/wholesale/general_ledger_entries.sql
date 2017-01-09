@@ -14,40 +14,31 @@ account_id,
 
 detail_create_date,
 detail_posting_date,
---entry_posting_date,
 
 
 credit,
 debit,
 
 detail_comment,
---entry_comment,
 source_journal,
 source_module,
 
 full_account_number,
-account_name,
+full_account_name,
 account_type,
 account_group,
 account_category,
 
-main_account_code,
-group_code,
-category_code,
-type_code,
+account_code, 
+cost_center_code, 
+division_code,
 
-split_part(full_account_number, '-', 1) as account_number, 
-split_part(full_account_number, '-', 2) as cost_center, 
-split_part(full_account_number, '-', 3) as division,
-
-rc.fday as posting_date_date_fday,
-rc.fweek as posting_date_date_fweek,
-rc.fperiod as posting_date_date_fperiod,
-rc.fyear as posting_date_date_fyear,
-rc.fquarter as posting_date_date_fquarter,
-rc.fday_of_week posting_date_date_fday_of_week,
-rc.fday_of_period posting_date_date_fday_of_period
+a.name as account,
+cc.name as cost_center,
+d.name as division
 
 
-from {{ref('general_ledger_entry_detail')}} d
-left join {{ref('retail_calendar')}} rc on rc.date = d.detail_posting_date
+from {{ref('general_ledger_entry_detail')}} e
+join {{ref('gl_account_mapping')}} a on a.account = e.account_code
+join {{ref('gl_cost_center_mapping')}} cc on cc.cost_center = e.cost_center_code
+join {{ref('gl_division_mapping')}} d on d.division = e.division_code
