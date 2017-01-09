@@ -14,14 +14,14 @@ account_id,
 
 detail_create_date,
 detail_posting_date,
-entry_posting_date,
+--entry_posting_date,
 
 
 credit,
 debit,
 
 detail_comment,
-entry_comment,
+--entry_comment,
 source_journal,
 source_module,
 
