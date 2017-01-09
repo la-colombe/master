@@ -39,6 +39,6 @@ d.name as division
 
 
 from {{ref('general_ledger_entry_detail')}} e
-join {{ref('gl_account_mapping')}} a on a.account = e.account_code
-join {{ref('gl_cost_center_mapping')}} cc on cc.cost_center = e.cost_center_code
-join {{ref('gl_division_mapping')}} d on d.division = e.division_code
+left join {{ref('gl_account_mapping')}} a on a.account = e.account_code
+left join {{ref('gl_cost_center_mapping')}} cc on cc.cost_center = e.cost_center_code
+left join {{ref('gl_division_mapping')}} d on d.division = e.division_code
