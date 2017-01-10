@@ -34,6 +34,7 @@ cost_center_code,
 division_code,
 
 a.name as account,
+a.group as group,
 cc.name as cost_center,
 d.name as division
 
