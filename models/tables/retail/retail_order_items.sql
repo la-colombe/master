@@ -76,8 +76,8 @@ select
 	NULL as category_name,
 	count as quantity,
 	NULL as item_base_price,
-	NULL as employee_bag,
-	NULL as expired_bag,
+	FALSE as employee_bag,
+	FALSE as expired_bag,
 	NULL as notes,
 --Location
 	open_date,

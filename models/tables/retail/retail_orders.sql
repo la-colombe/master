@@ -75,8 +75,8 @@ select
 	m.date as updated_at,
 
 	--Order Item Aggregates
-	NULL as employee_bag,
-	NULL as expired_bag,
+	FALSE as employee_bag,
+	FALSE as expired_bag,
 
 --Location
 	open_date,
