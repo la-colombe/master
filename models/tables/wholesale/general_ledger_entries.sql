@@ -36,7 +36,10 @@ division_code,
 a.name as account,
 a.group as group,
 cc.name as cost_center,
-d.name as division
+case cost_center_code
+	when 10070 then 'CPG'
+	else d.name
+end as division
 
 
 from {{ref('general_ledger_entry_detail')}} e
