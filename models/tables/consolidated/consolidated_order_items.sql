@@ -167,8 +167,8 @@ SELECT
 --Location
 	region,
 --Calendar
-	ship_date,
-	ship_date,
+	transaction_date,
+	transaction_date,
 	transaction_date_fday,
 	transaction_date_fweek,
 	transaction_date_fperiod,
