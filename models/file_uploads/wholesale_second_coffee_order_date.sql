@@ -1,0 +1,2 @@
+select customer_code, date_trunc('day', new_second_coffee_order_date) as new_second_coffee_order_date
+from google_sheets.second_coffee_order_changes

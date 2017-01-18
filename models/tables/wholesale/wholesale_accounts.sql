@@ -9,7 +9,10 @@
 select 
 
 a.name,
-a.second_paid_coffee_invoice_date,
+case
+  when s.new_second_coffee_order_date is not null then s.new_second_coffee_order_date
+  else a.second_paid_coffee_invoice_date
+end as second_paid_coffee_invoice_date,
 dateadd(day, 365, a.second_paid_coffee_invoice_date) as comp_date,
 a.first_invoice_date,
 a.most_recent_invoice_date,
@@ -24,7 +27,7 @@ a.company_code,
 --a.secondary_account_manager_id,
 --a.call_frequency,
 --nvl(a.min_vol,0) as min_vol,
-a.min_vol
+a.min_vol,
 a.new_tier,
 a.sales_rep_name,
 a.primary_account_manager_name,
@@ -97,16 +100,7 @@ case
   when substring(a.customer_code, 5, 1) = 'H' then 'Hotels'
   when substring(a.customer_code, 5, 1) = 'G' then 'Groups'
   when substring(a.customer_code, 5, 1) = 'F' then 'Catering/Bakery'
-end as business_type,
-
-rc.fday as second_paid_coffee_invoice_date_fday,
-rc.fweek as second_paid_coffee_invoice_date_fweek,
-rc.fperiod as second_paid_coffee_invoice_date_fperiod,
-rc.fyear as second_paid_coffee_invoice_date_fyear,
-rc.fquarter as second_paid_coffee_invoice_date_fquarter,
-rc.fday_of_week second_paid_coffee_invoice_date_fday_of_week,
-rc.fday_of_period second_paid_coffee_invoice_date_fday_of_period
-
+end as business_type
 
 from {{ref('warehouse_accounts')}} a
-left join {{ref('retail_calendar')}} rc on rc.date = date_trunc('day', a.second_paid_coffee_invoice_date)
+left join {{ref('wholesale_second_coffee_order_date')}} s on s.customer_code = a.customer_code
