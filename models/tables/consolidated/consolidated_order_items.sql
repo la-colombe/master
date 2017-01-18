@@ -57,22 +57,7 @@ select
 
 --Calendar
 	created_at,
-	created_at_date,
-	created_at_fday,
-	created_at_fweek,
-	created_at_fperiod,
-	created_at_fyear,
-	created_at_fquarter,
-	created_at_fday_of_week,
-	created_at_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	created_at_date
 
 from {{ref('dtc_order_items')}}
 
@@ -111,22 +96,7 @@ select
 
 --Calendar
 	created_at,
-	created_at_date,
-	created_at_fday,
-	created_at_fweek,
-	created_at_fperiod,
-	created_at_fyear,
-	created_at_fquarter,
-	created_at_fday_of_week,
-	created_at_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	created_at_date
 
 from {{ref('retail_order_items')}}
 
@@ -168,22 +138,7 @@ SELECT
 	region,
 --Calendar
 	transaction_date,
-	transaction_date,
-	transaction_date_fday,
-	transaction_date_fweek,
-	transaction_date_fperiod,
-	transaction_date_fyear,
-	transaction_date_fquarter,
-	transaction_date_fday_of_week,
-	transaction_date_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	transaction_date
 
 from {{ref('wholesale_invoice_items')}}
 
