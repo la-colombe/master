@@ -33,28 +33,10 @@ select
 	region,
 	store_type,
 	location_code,
-	cm.is_comp,
---Retail Calendar
-	to_char(convert_timezone(timezone, created_at), 'HH24') as created_at_hour,
-	fday as created_at_fday,
-	fweek as created_at_fweek,
-	fperiod as created_at_fperiod,
-	fyear as created_at_fyear,
-	fquarter as created_at_fquarter,
-	fday_of_week as created_at_fday_of_week,
-	fday_of_period as created_at_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	cm.is_comp
       
 from {{ref('square_cafe_orders')}} o 
 join {{ref('cafe_mapping')}} cm on o.location_code = cm.square
-join {{ref('retail_calendar')}} rc on rc.date = date_trunc('day', convert_timezone(timezone, created_at))
 
 UNION
 
@@ -85,25 +67,7 @@ select
 	region,
 	store_type,
 	location_code,
-	cr.is_comp,
-
---Retail Calendar
-	NULL as created_at_hour,
-	fday as created_at_fday,
-	fweek as created_at_fweek,
-	fperiod as created_at_fperiod,
-	fyear as created_at_fyear,
-	fquarter as created_at_fquarter,
-	fday_of_week as created_at_fday_of_week,
-	fday_of_period as created_at_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	cr.is_comp
 
 from {{ref('micros_order_items')}} m
 join 
@@ -117,5 +81,4 @@ join
       group by 1
     ) tr on tr.location_code = cm.square
   ) cr on cr.micros = m.cafe
-join {{ref('retail_calendar')}} rc on rc.date = m.date
 where created_at < cr.square_start_date

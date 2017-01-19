@@ -24,22 +24,7 @@ o.fulfillment_status,
 o.processing_method,
 o.gateway,
 o.created_at,
-rc.fday as created_at_fday,
-rc.fweek as created_at_fweek,
-rc.fperiod as created_at_fperiod,
-rc.fyear as created_at_fyear,
-rc.fquarter as created_at_fquarter,
-rc.fday_of_week as created_at_fday_of_week,
-rc.fday_of_period as created_at_fday_of_period,
-is_last_week,
-is_last_month,
-is_ty,
-is_ly,
-is_wtd,
-is_mtd,
-is_qtd,
-is_ytd,
-o.updated_at,
+date_trunc('day', o.created_at) as created_at_date,
 o.customer_created_at,
 o.time_since_customer_creation,
 
@@ -74,6 +59,5 @@ nso.time_since_previous_order as non_subscription_time_since_previous_order,
 nso.is_most_recent_order as non_subscription_is_most_recent_order
 
 from {{ref('shopify_orders')}} o
-join {{ref('retail_calendar')}} rc on rc.date = date_trunc('day', o.created_at)
 left join {{ref('shopify_subscription_orders')}} so on so.id = o.id
 left join {{ref('shopify_non_subscription_orders')}} nso on nso.id = o.id

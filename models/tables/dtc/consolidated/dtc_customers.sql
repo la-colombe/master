@@ -17,25 +17,12 @@ select
 	--c.tax_exempt,
 	--c.updated_at,
 	c.created_at,
-	rc.fday as created_at_fday,
-	rc.fweek as created_at_fweek,
-	rc.fperiod as created_at_fperiod,
-	rc.fyear as created_at_fyear,
-	rc.fquarter as created_at_fquarter,
-	rc.fday_of_week as created_at_fday_of_week,
-	rc.fday_of_period as created_at_fday_of_period,
+	date_trunc('day', c.created_at) as created_at_date,
 
 --Combined
 	c.number_of_orders,
 	c.average_order_value,
 	c.first_order_date,
-	forc.fday as first_order_fday,
-	forc.fweek as first_order_fweek,
-	forc.fperiod as first_order_fperiod,
-	forc.fyear as first_order_fyear,
-	forc.fquarter as first_order_fquarter,
-	forc.fday_of_week as first_order_fday_of_week,
-	forc.fday_of_period as first_order_fday_of_period,
 	c.last_order_date,
 	c.years_active,
 	c.lifetime_revenue,
@@ -64,7 +51,5 @@ select
 	sc.items_per_order as subscription_items_per_order
 
 	from {{ref('shopify_customers')}} c
- 	join {{ref('retail_calendar')}} rc on rc.date = date_trunc('day', c.created_at)
 	left join {{ref('shopify_subscription_customers')}} sc on sc.id = c.id
 	left join {{ref('shopify_non_subscription_customers')}} nsc on nsc.id = c.id
-	join {{ref('retail_calendar')}} forc on forc.date = date_trunc('day', c.first_order_date)

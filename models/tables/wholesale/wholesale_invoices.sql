@@ -58,23 +58,7 @@ SELECT
   case
     when i.transaction_date >= a.comp_date then true
     else false
-  end as is_comp,
-
-  fday as transaction_date_fday,
-  fweek as transaction_date_fweek,
-  fperiod as transaction_date_fperiod,
-  fyear as transaction_date_fyear,
-  fquarter as transaction_date_fquarter,
-  fday_of_week as transaction_date_fday_of_week,
-  fday_of_period as transaction_date_fday_of_period,
-  is_last_week,
-  is_last_month,
-  is_ty,
-  is_ly,
-  is_wtd,
-  is_mtd,
-  is_qtd,
-  is_ytd
+  end as is_comp
 
 from {{ref('warehouse_invoices')}} i
 left join {{ref('wholesale_accounts')}} a on a.customer_code = i.customer_code

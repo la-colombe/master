@@ -28,23 +28,7 @@ Select
 
 --Calendar
 
-	created_at,
-	NULL as created_at_hour,
-	created_at_fday,
-	created_at_fweek,
-	created_at_fperiod,
-	created_at_fyear,
-	created_at_fquarter,
-	created_at_fday_of_week,
-	created_at_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	created_at
 
 from {{ref('dtc_orders')}}
 
@@ -69,23 +53,7 @@ select
 	location_code as unit_type,
 
 --Retail Calendar
-	created_at,
-	created_at_hour,
-	created_at_fday,
-	created_at_fweek,
-	created_at_fperiod,
-	created_at_fyear,
-	created_at_fquarter,
-	created_at_fday_of_week,
-	created_at_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	created_at
 
 from {{ref('retail_orders')}}
 
@@ -109,22 +77,6 @@ SELECT
   	NULL as is_comp,
  	customer_type as unit_type,
  
-	ship_date,
-	NULL,
-	transaction_date_fday,
-	transaction_date_fweek,
-	transaction_date_fperiod,
-	transaction_date_fyear,
-	transaction_date_fquarter,
-	transaction_date_fday_of_week,
-	transaction_date_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	transaction_date
 
 from {{ref('wholesale_invoices')}}

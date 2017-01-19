@@ -37,22 +37,7 @@ select
 
 --Retail Calendar
 	date_trunc('day', convert_timezone(timezone, created_at)) as created_at_date,
-	to_char(convert_timezone(timezone, created_at), 'HH24') as created_at_hour,
-	fday as created_at_fday,
-	fweek as created_at_fweek,
-	fperiod as created_at_fperiod,
-	fyear as created_at_fyear,
-	fquarter as created_at_fquarter,
-	fday_of_week as created_at_fday_of_week,
-	fday_of_period as created_at_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	to_char(convert_timezone(timezone, created_at), 'HH24') as created_at_hour
       
 from {{ref('square_cafe_order_items')}} o 
 join {{ref('cafe_mapping')}} cm on o.location_code = cm.square
@@ -89,22 +74,7 @@ select
 	cr.is_comp,
 --Retail Calendar
 	m.date as created_at_date,
-	NULL as created_at_hour,
-	fday as created_at_fday,
-	fweek as created_at_fweek,
-	fperiod as created_at_fperiod,
-	fyear as created_at_fyear,
-	fquarter as created_at_fquarter,
-	fday_of_week as created_at_fday_of_week,
-	fday_of_period as created_at_fday_of_period,
-	is_last_week,
-	is_last_month,
-	is_ty,
-	is_ly,
-	is_wtd,
-	is_mtd,
-	is_qtd,
-	is_ytd
+	NULL as created_at_hour
 
 from {{ref('micros_order_items')}} m
 join 
