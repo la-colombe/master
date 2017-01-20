@@ -1,3 +1,10 @@
+{{
+  config({
+    "materialized" : "table",
+    "unique_key" : "store_number"
+    })
+}}
+
 select 
 
 store_number,

@@ -23,8 +23,8 @@ select
 	updated_at,
 
 --Order Item Aggregates
-	employee_bag,
-	expired_bag,
+	employee,
+	expired,
 
 --Location
 	open_date,
@@ -57,8 +57,8 @@ select
 	m.date as updated_at,
 
 	--Order Item Aggregates
-	FALSE as employee_bag,
-	FALSE as expired_bag,
+	FALSE as employee,
+	FALSE as expired,
 
 --Location
 	open_date,
