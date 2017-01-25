@@ -58,6 +58,7 @@ a.payment_terms,
 a.sent_to_collections,
 a.churn_date,
 a.churn_status,
+a.price_tier,
 
 a.address_line_1,
 a.address_line_2,

@@ -39,7 +39,9 @@ cc.name as cost_center,
 case cost_center_code
 	when 10070 then 'CPG'
 	else d.name
-end as division
+end as division,
+a.type as type,
+a.statement as statement
 
 
 from {{ref('general_ledger_entry_detail')}} e

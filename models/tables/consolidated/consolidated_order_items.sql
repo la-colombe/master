@@ -137,8 +137,8 @@ SELECT
 --Location
 	region,
 --Calendar
-	transaction_date,
-	transaction_date
+	ship_date,
+	ship_date
 
 from {{ref('wholesale_invoice_items')}}
 
