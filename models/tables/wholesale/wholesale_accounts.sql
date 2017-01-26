@@ -13,7 +13,10 @@ case
   when s.new_second_coffee_order_date is not null then s.new_second_coffee_order_date
   else a.second_paid_coffee_invoice_date
 end as second_paid_coffee_invoice_date,
-dateadd(day, 365, a.second_paid_coffee_invoice_date) as comp_date,
+case
+  when s.new_second_coffee_order_date is not null then dateadd(day, 365, s.new_second_coffee_order_date)
+  else dateadd(day, 365, a.second_paid_coffee_invoice_date) 
+end as comp_date,
 a.first_invoice_date,
 a.most_recent_invoice_date,
 a.division,
