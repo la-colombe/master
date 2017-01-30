@@ -41,7 +41,6 @@ select
       
 from {{ref('square_cafe_order_items')}} o 
 join {{ref('cafe_mapping')}} cm on o.location_code = cm.square
-join {{ref('retail_calendar')}} rc on rc.date = date_trunc('day', convert_timezone(timezone, created_at))
 
 UNION
 
@@ -88,6 +87,5 @@ join
       group by 1
     ) tr on tr.location_code = cm.square
   ) cr on cr.micros = m.cafe
-join {{ref('retail_calendar')}} rc on rc.date = m.date
 where created_at < cr.square_start_date
 

@@ -62,4 +62,3 @@ SELECT
 
 from {{ref('warehouse_invoices')}} i
 left join {{ref('wholesale_accounts')}} a on a.customer_code = i.customer_code
-left join {{ref('retail_calendar')}} rc on rc.date = date_trunc('day', i.transaction_date)

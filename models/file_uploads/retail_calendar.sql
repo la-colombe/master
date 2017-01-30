@@ -35,18 +35,23 @@ fquarter,
 fday_of_quarter,
 case
 	when fday = (select fday from today) - 1 then true
+	when (select fday from today) = 1 and fday = (select max(fday) from google_sheets.retail_calendar trc where trc.fyear = rc.fyear - 1) then true
 	else false
 end as is_yesterday,
 case
 	when fweek = (select fweek from today) - 1 then true
+	when (select fweek from today) = 1 and fweek = 52 then true --(select max(fweek) from google_sheets.retail_calendar trc where trc.fyear = rc.fyear - 1) then true
 	else false
 end as is_last_week,
+
 case
 	when fperiod = (select fperiod from today) - 1 then true
+	when (select fperiod from today) = 1 and fperiod =  12 then true
 	else false
 end as is_last_month,
 case
 	when fquarter = (select fquarter from today) - 1 then true
+	when (select fquarter from today) = 1 and fquarter = 4 then true
 	else false
 end as is_last_quarter,
 case
@@ -91,4 +96,4 @@ case
 	else false
 end as is_within_last_12_months
 
-from google_sheets.retail_calendar
+from google_sheets.retail_calendar rc
