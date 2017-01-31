@@ -18,6 +18,7 @@ select
 	--c.updated_at,
 	c.created_at,
 	date_trunc('day', c.created_at) as created_at_date,
+	c.accepts_marketing,
 
 --Combined
 	c.number_of_orders,
