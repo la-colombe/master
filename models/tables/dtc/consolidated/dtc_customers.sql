@@ -23,8 +23,8 @@ select
 --Combined
 	c.number_of_orders,
 	c.average_order_value,
-	c.first_order_date,
-	c.last_order_date,
+	date_trunc('day', c.first_order_date) AS first_order_date,
+	date_trunc('day', c.last_order_date) AS last_order_date,
 	c.years_active,
 	c.lifetime_revenue,
 	c.items_purchased,
