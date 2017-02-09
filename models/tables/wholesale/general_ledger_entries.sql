@@ -25,26 +25,24 @@ source_module,
 
 full_account_number,
 full_account_name,
-account_type,
-account_group,
-account_category,
 
 account_code, 
 cost_center_code, 
 division_code,
 
-a.name as account,
+--a.name as account,
 a.group as group,
 cc.name as cost_center,
 case cost_center_code
 	when 10070 then 'CPG'
 	else d.name
 end as division,
-a.type as type,
-a.statement as statement
+a.type,
+a.statement,
+a.pl_cost_center
 
 
 from {{ref('general_ledger_entry_detail')}} e
-left join {{ref('gl_account_mapping')}} a on a.account = e.account_code
+left join {{ref('gl_full_account_mapping')}} a on a.account = e.account_code and a.division = e.division_code and a.cost_center = e.cost_center_code
 left join {{ref('gl_cost_center_mapping')}} cc on cc.cost_center = e.cost_center_code
 left join {{ref('gl_division_mapping')}} d on d.division = e.division_code
