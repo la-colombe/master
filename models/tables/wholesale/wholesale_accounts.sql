@@ -74,18 +74,8 @@ a.phone,
 a.tax,
 
 case
-    when a.customer_code in (select warehouse from analytics.cafe_mapping) then 'Cafe'
-    when left(a.customer_code,2)  = '01' then 'Philly'
-    when left(a.customer_code,2)  = '15' then 'CPG'
-  	when left(a.customer_code,2)  = '20' or left(a.customer_code,2)  = '40' or left(a.customer_code,2)  = '55' then 'New York'
-  	when left(a.customer_code,2)  = '30' then 'DC'
-  	when left(a.customer_code,2)  = '50' then 'Chicago'
-  	when left(a.customer_code,2)  = '60' or left(a.customer_code,2)  = '25' then 'West Coast'
-    when left(a.customer_code,2)  = '61' then 'California'
-    when left(a.customer_code,2)  = '64' then 'Florida'
-    when left(a.customer_code,2)  = '65' then 'Boston'
-  	when left(a.customer_code,2)  = '70' then 'Nationals'
-	else 'Other'
+  when a.customer_code in (select warehouse from analytics.cafe_mapping) then 'Cafe'
+	else coalesce(a.division, 'Other')
 end as region,
 
 case
