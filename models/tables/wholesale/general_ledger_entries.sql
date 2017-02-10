@@ -25,6 +25,9 @@ source_module,
 
 full_account_number,
 full_account_name,
+account_type,
+account_group,
+account_category,
 
 account_code, 
 cost_center_code, 
