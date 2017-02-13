@@ -16,7 +16,10 @@ select
 	order_id,
 
 -- Item info
-	sku,
+	case 
+		when item_name = 'For Haiti' then 'CWHAIB12WB'
+		else sku
+	end as sku,
 	item_name,
 	variant_name,
 	category_name,
