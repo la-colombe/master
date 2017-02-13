@@ -9,6 +9,7 @@
 select
 
 o.id,
+o.order_number,
 o.customer_id,
 o.email,
 o.shipping_city,
@@ -27,6 +28,7 @@ o.created_at,
 date_trunc('day', o.created_at) as created_at_date,
 o.customer_created_at,
 o.time_since_customer_creation,
+o.shipping_price,
 
 --Combined
 o.customer_order_number,
@@ -56,8 +58,13 @@ nso.gross_sales as non_subscription_gross_sales,
 nso.weight as non_subscription_weight,
 nso.time_since_first_order as non_subscription_time_since_first_order,
 nso.time_since_previous_order as non_subscription_time_since_previous_order,
-nso.is_most_recent_order as non_subscription_is_most_recent_order
+nso.is_most_recent_order as non_subscription_is_most_recent_order,
+
+--Shipstation
+sa.total_cost as shipping_cost,
+sa.shipments as number_of_shipments
 
 from {{ref('shopify_orders')}} o
 left join {{ref('shopify_subscription_orders')}} so on so.id = o.id
 left join {{ref('shopify_non_subscription_orders')}} nso on nso.id = o.id
+left join {{ref('shipstation_aggregate')}} sa on sa.order_number = o.order_number

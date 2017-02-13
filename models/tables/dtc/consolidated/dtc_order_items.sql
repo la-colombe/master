@@ -10,6 +10,7 @@ select
 
 oi.id,
 oi.order_id,
+oi.order_number,
 oi.product_id,
 oi.variant_id,
 oi.customer_id,
