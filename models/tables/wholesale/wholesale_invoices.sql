@@ -11,7 +11,6 @@ SELECT
   i.unique_invoice_id,
   i.transaction_date, 
   i.customer_code,
-  i.bill_to_name,
   --i.header_number,
   --i.invoice_number,
   --i.invoice_type,
@@ -30,7 +29,7 @@ SELECT
   i.invoice_freight,
   i.comment,
   
-  i.account_name,
+  i.bill_to_name as account_name,
   --i.account_division,
   --i.company_code,
   --i.account_min_vol,
@@ -50,15 +49,7 @@ SELECT
   i.total_quantity_backordered,
   i.total_extension,
   i.total_weight,
-  i.account_paid_coffee_invoice_number,
-
-  a.region,
-  a.customer_type,
-  a.business_type,
-  case
-    when i.transaction_date >= a.comp_date then true
-    else false
-  end as is_comp
+  i.account_paid_coffee_invoice_number
 
 from {{ref('warehouse_invoices')}} i
 left join {{ref('wholesale_accounts')}} a on a.customer_code = i.customer_code

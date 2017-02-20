@@ -108,7 +108,7 @@ SELECT
 	'Wholesale' as source,
 	unique_invoice_item_id as id,
 	unique_invoice_id as order_id,
-	customer_code as customer_id,
+	i.customer_code as customer_id,
 
 --Item info
 	sku,
@@ -120,13 +120,13 @@ SELECT
 	NULL as line_item_discount,
 	extension as line_item_net_sales,
 	NULL as line_item_gross_sales,
-	total_weight as line_item_weight,
+	i.total_weight as line_item_weight,
 	NULL as weight,
 	NULL as financial_status,
 
 --Customer Info
 
-	account_name as customer_name,
+	a.name as customer_name,
 	customer_type as unit_type,
 	case 
 		when customer_type = 'Hospitality' then region
@@ -135,11 +135,12 @@ SELECT
 	end as unit_sub_type,
 
 --Location
-	region,
+	a.region,
 --Calendar
 	ship_date,
 	ship_date
-
-from {{ref('wholesale_invoice_items')}}
+	
+from {{ref('wholesale_invoice_items')}} i
+left join {{ref('wholesale_accounts')}} a on a.customer_code = i.customer_code 
 
 

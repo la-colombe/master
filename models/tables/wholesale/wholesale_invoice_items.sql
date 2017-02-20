@@ -41,7 +41,7 @@ SELECT
   ii.comment,
   ii.account_paid_coffee_invoice_number,
   ii.total_weight,
-  ii.account_name,
+  ii.bill_to_name as account_name,
   ii.account_invoice_number,
   case
     when ii.sku = 'PPPURB50XX' or ii.sku like 'PPPURD%' then 'On Tap'
@@ -49,15 +49,7 @@ SELECT
     when ii.sku like 'M%' then 'Machines'
     when ii.sku like 'P%' then 'RTD'
     else 'Other'
-  end as product_category,
-
-  a.region,
-  a.customer_type,
-  a.business_type,
-  case
-    when ii.transaction_date >= a.comp_date then true
-    else false
-  end as is_comp
+  end as product_category
 
   from {{ref('warehouse_invoice_items')}} ii
   left join {{ref('wholesale_accounts')}} a on a.customer_code = ii.customer_code
